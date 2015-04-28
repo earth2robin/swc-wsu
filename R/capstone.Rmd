@@ -1,0 +1,61 @@
+---
+title: "swc-wsu"
+author: "Robin M. Henderson"
+date: "Tuesday, April 28, 2015"
+output: html_document
+---
+
+Load Data
+
+```{r}
+gapminder <- read.csv("../gapminder.csv")
+library(ggplot2)
+library(knitr)
+library(dplyr)
+```
+
+
+**Capstone Project**
+
+*Slovenia, Rwanda, Columbia*
+
+**Slovenia**
+
+```{r, echo = FALSE}
+
+gm_Slovenia <- gapminder%>%
+  filter(country=="Slovenia")%>%
+  ggplot(aes(x=year, y=gdpPercap)) +
+  geom_line() +
+  geom_point(aes(color=pop))
+gm_Slovenia
+
+##Increasing GDP with minor disturbance
+```
+
+
+
+**Rwanda*
+```{r}
+gm_Rwanda <- gapminder%>%
+  filter(country=="Rwanda")%>%
+  ggplot(aes(x=year, y=gdpPercap)) +
+  geom_line() +
+  geom_point(aes(color=pop))
+gm_Rwanda
+
+##Increasing, erratic GDP
+```
+
+
+**Brazil**
+```{r}
+gm_Brazil <- gapminder%>%
+  filter(country=="Brazil")%>%
+  ggplot(aes(x=year, y=gdpPercap)) +
+  geom_line() +
+  geom_point(aes(color=pop))
+gm_Brazil
+
+##Increasing GDP
+```
