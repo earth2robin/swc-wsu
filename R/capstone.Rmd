@@ -59,3 +59,15 @@ gm_Brazil
 
 ##Increasing GDP
 ```
+
+
+**2007**
+```{r}
+gapminder%>%
+  group_by(continent) %>%
+  summarize (maxlifeExp = max (lifeExp),
+             minlifeExp = min (lifeExp),
+             meanlifeExp = mean (lifeExp))
+
+# Higher LFE in more developed and/or low populated areas, low LFE in undeveloped areas influence contitnet LFE
+```
