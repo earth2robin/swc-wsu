@@ -71,3 +71,17 @@ gapminder%>%
 
 # Higher LFE in more developed and/or low populated areas, low LFE in undeveloped areas influence contitnet LFE
 ```
+
+
+**Global LFE**
+```{r, echo=FALSE}
+gapminder%>%
+    group_by(continent) %>%
+  ggplot(aes(x=lifeExp)) +
+  geom_histogram(binwidth=2.5, fill="lightblue", color="black")
+
+gapminder%>%
+    group_by(continent) %>%
+ggplot(aes(x=lifeExp)) +
+  geom_histogram(binwidth=1, fill="purple", color="black")
+```
